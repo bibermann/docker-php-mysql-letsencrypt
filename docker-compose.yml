@@ -17,7 +17,7 @@ services:
     depends_on:
       - mysql
     container_name: ${CONTAINER_PHP_NAME}
-    image: ./docker-php
+    build: ./docker-php
     restart: unless-stopped
     volumes:
       - ${CODE_PATH}:/code
