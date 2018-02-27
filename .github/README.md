@@ -1,4 +1,4 @@
-# Using NGINX/PHP with SSL enabled integrated with NGINX proxy and autorenew LetsEncrypt certificates
+# Using NGINX/PHP/MySQL with SSL enabled integrated with NGINX proxy and autorenew LetsEncrypt certificates
 
 This docker-compose should be used with WebProxy (the NGINX Proxy):
 
