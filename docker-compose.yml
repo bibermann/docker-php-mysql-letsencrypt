@@ -14,8 +14,10 @@ services:
       - ${DB_PATH}:/var/lib/mysql
 
   php:
+    depends_on:
+      - mysql
     container_name: ${CONTAINER_PHP_NAME}
-    image: php:fpm-alpine
+    image: ./docker-php
     restart: unless-stopped
     volumes:
       - ${CODE_PATH}:/code
@@ -24,9 +26,8 @@ services:
   web:
     depends_on:
       - php
-      - mysql
     container_name: ${CONTAINER_WEB_NAME}
-    image: nginx:alpine
+    image: nginx:latest
     restart: unless-stopped
     volumes:
       - ${CODE_PATH}:/code
